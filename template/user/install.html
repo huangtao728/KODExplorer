@@ -29,10 +29,9 @@
 			<?php
 	            $error = php_env_check();
 	            if ($error=='') {
-	            	echo '<div class="success"><h4>Successful!</h4>',$L['install_login'],
-	            	'<br/></div></div>';
+	            	echo '<div class="success"><h4>Successful!</h4><br/></div></div><div class="guest"><a href="./index.php?user/loginFirst">'.$L['login'].'</a></div>';
 	            }else{
-	            	echo '<div class="error"><h4>error:</h4>'.$error.'</div></div>';
+	            	echo '<div class="error"><h4>error:</h4>'.$error.'</div></div><div class="guest"><a href="./index.php?user/loginFirst">'.$L['php_env_error_ignore'].'</a></div>';
 	            }
 	        ?>
 		</div>
