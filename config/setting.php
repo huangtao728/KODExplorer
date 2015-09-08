@@ -31,7 +31,7 @@ $config['setting_default'] = array(
 //初始化系统配置
 $config['setting_system_default'] = array(
 	'system_password'	=> rand_string(10),
-	'system_name'		=> "KodExplorer",
+	'system_name'		=> "DaoExplorer",
 	'system_desc'		=> "——Daocloud.Volume管理器",
 	'path_hidden'		=> ".htaccess,.git,.DS_Store,.gitignore",//目录列表隐藏的项
 	'auto_login'		=> "1",			// 是否自动登录；登录用户为guest
