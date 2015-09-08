@@ -190,14 +190,7 @@ function init_setting(){
         'status'    =>  0
     );
 
-    $admin = array(
-        'name'      =>  'admin',
-        'password'  =>  md5($password),
-        'role'      =>  'root',
-        'status'    =>  0
-    );
     $member->add($username,$user);
-    $member->replace_update('admin','admin',$admin);
     initDaoCloudUser($username);
 
     $setting_file = USER_SYSTEM.'system_setting.php';
