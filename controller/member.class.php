@@ -14,23 +14,6 @@ class member extends Controller{
         $this->sql=new fileCache(USER_SYSTEM.'member.php');
         $this->add_daocloud_user()
     }
-    
-
-    public function add_daocloud_user(){
-
-        $user = array(
-            'name'      =>  "james",
-            'password'  =>  md5("hello"),
-            'role'      =>  "default",
-            'status'    =>  0,
-        );
-        if ($this->sql->add("james",$user)) {
-            $this->_initUser("james");
-            show_json($this->L['success']);
-        }
-        show_json($this->L['error_repeat'],false);
-    }
-
 
     /**
      * 获取用户列表数据
