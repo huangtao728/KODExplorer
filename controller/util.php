@@ -166,17 +166,17 @@ function initDaoCloudUser($name){
         $home = explode(',',$new_user_folder);
         $user_path = USER_PATH.$name.'/';
         mk_dir($user_path);
-        chmod($user_path,0777);
+        // chmod($user_path,0777);
         foreach ($root as $dir) {
             mk_dir($user_path.$dir);
-            chmod($user_path.$dir,0777);
+            // chmod($user_path.$dir,0777);
         }
         foreach ($home as $dir) {
             mk_dir($user_path.'home/'.$dir);
-            chmod($user_path.'home/'.$dir,0777);
+            // chmod($user_path.'home/'.$dir,0777);
         }
         fileCache::save($user_path.'data/config.php',$GLOBALS['config']['setting_default']);
-        chmod($user_path.'data/config.php',0777);
+        // chmod($user_path.'data/config.php',0777);
     }
 
 function init_setting(){
