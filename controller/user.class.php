@@ -77,7 +77,18 @@ class user extends Controller
                 $this->logout();//不自动登录
             }else{
                 if (!file_exists(USER_SYSTEM.'install.lock')) {
-                    $this->display('install.html');exit;
+                    if (!file_exists(USER_SYSTEM.'install.lock')) {
+                        $error = php_env_check();
+                        if ($error=='') {
+                            $this->assign('msg',$msg);
+                            $this->display('login.html');
+                            exit;
+                        }
+                        // else{
+                        //     echo '<div class="error"><h4>error:</h4>'.$error.'</div></div><div class="guest"><a href="./index.php?user/loginFirst">'.$L['php_env_error_ignore'].'</a></div>';
+                        // }
+                        // $this->display('install.html');exit;
+                    }
                 }
                 header('location:./index.php?user/loginSubmit&name=guest&password=guest');
             }
