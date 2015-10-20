@@ -227,8 +227,9 @@ function delFileUnderDir($dirName) {
                 if (is_dir("$dirName/$item")) {
                     delFileUnderDir("$dirName/$item");
                 } else {
-                    if (unlink("$dirName/$item")) 
-                        // echo "成功删除文件： $dirName/$item\n";
+                    unlink("$dirName/$item");
+                    // if (unlink("$dirName/$item")) 
+                    // echo "成功删除文件： $dirName/$item\n";
                 }
             }
         }
