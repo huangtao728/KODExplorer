@@ -5,3 +5,5 @@ ADD . /app
 RUN mkdir /data
 RUN chmod -R 777 /data
 RUN chmod -R 777 /app
+ENV username=admin
+ENV password=password

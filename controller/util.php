@@ -218,3 +218,21 @@ function init_setting(){
         $GLOBALS['L']['kod_power_by'] = $setting['powerby'];
     }
 }
+
+// 循环删除文件夹下所有文件并不删除文件夹
+function delFileUnderDir($dirName) {
+    if ($handle = opendir("$dirName")) {
+        while (false !== ($item = readdir($handle))) {
+            if ($item != "." && $item != "..") {
+                if (is_dir("$dirName/$item")) {
+                    delFileUnderDir("$dirName/$item");
+                } else {
+                    unlink("$dirName/$item");
+                    // if (unlink("$dirName/$item")) 
+                    // echo "成功删除文件： $dirName/$item\n";
+                }
+            }
+        }
+        closedir($handle);
+    }
+}
