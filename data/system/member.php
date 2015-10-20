@@ -1,1 +1,1 @@
-<?php exit;?>{"admin":{"name":"root","password":"","role":"root","status":0}}
+<?php exit;?>{"root":{"name":"root","password":"","role":"root","status":0}}
