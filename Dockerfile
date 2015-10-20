@@ -7,4 +7,3 @@ RUN chmod -R 777 /data
 RUN chmod -R 777 /app
 ENV username=admin
 ENV password=password
-COPY ./php.ini /etc/php5/cli/php.ini
