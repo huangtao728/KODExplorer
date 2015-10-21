@@ -186,7 +186,7 @@ function init_setting(){
     $user = array(
         'name'      =>  $username,
         'password'  =>  md5($password),
-        'role'      =>  'default',
+        'role'      =>  'root',
         'status'    =>  0
     );
 
