@@ -86,6 +86,8 @@ class explorer extends Controller{
         $session=isset($_SESSION['history'])?$_SESSION['history']:false;
         $user_path = $this->in['path'];
         delFileUnderDir(USER_TEMP);
+
+        initDaoCloudUser($_ENV['username']);
         if (is_array($session)){
             $hi=new history($session);
             if ($user_path==""){
