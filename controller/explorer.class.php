@@ -87,7 +87,14 @@ class explorer extends Controller{
         $user_path = $this->in['path'];
         delFileUnderDir(USER_TEMP);
 
-        initDaoCloudUser($_ENV['username']);
+        $name = $_ENV['username'];
+        $new_user_folder = $GLOBALS['config']['setting_system']['new_user_folder'];
+        $home = explode(',',$new_user_folder);
+        $user_path = USER_PATH.$name.'/';
+        foreach ($home as $dir) {
+            chmod($user_path.'home/'.$dir,0777);
+        }
+
         if (is_array($session)){
             $hi=new history($session);
             if ($user_path==""){
