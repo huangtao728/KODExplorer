@@ -181,8 +181,11 @@ function initDaoCloudUser($name){
 
 function init_setting(){
     $member = new fileCache(USER_SYSTEM.'member.php');
+    echo "USER_SYSTEM\n";
     $username = $_ENV['username'];
     $password = $_ENV['password'];
+    echo "username： $username\n";
+    echo "password $password\n";
     $user = array(
         'name'      =>  $username,
         'password'  =>  md5($password),
