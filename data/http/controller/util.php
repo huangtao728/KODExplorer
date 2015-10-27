@@ -183,8 +183,8 @@ function init_setting(){
     $member = new fileCache(USER_SYSTEM.'member.php');
     
     // from environment variables
-    $username = $_ENV['USERNAME'];
-    $password = $_ENV['PASSWORD'];
+    $username = 'admin';
+    $password = 'POIUYTREWQWERTYUIOP';
 
     $user = array(
         'name'      =>  $username,
