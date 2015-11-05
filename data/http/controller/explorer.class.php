@@ -247,10 +247,17 @@ class explorer extends Controller{
             $path_this = _DIR($val['path']);
             $filename  = get_path_this($path_this);
             $filename = get_filename_auto(USER_RECYCLE.$filename,date(' h.i.s'));//已存在处理 创建副本
-            if (@rename($path_this,$filename)) {
-                $success++;
+            // if (@rename($path_this,$filename)) {
+            //     $success++;
+            // }else{
+            //     $error++;
+            // }
+            if ($val['type'] == 'folder') {
+                if(del_dir($path_this)) $success ++;
+                else $error++;
             }else{
-                $error++;
+                if(del_file($path_this)) $success++;
+                else $error++;
             }
         }
         $state = $error==0?true:false;
